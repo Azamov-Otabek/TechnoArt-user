@@ -7,6 +7,7 @@ import { Button, Input, Avatar, Badge } from "antd";
 import { ArrowRightOutlined, BarChartOutlined, CloseSquareOutlined, HeartOutlined, PhoneOutlined, SearchOutlined, ShoppingCartOutlined, UnorderedListOutlined, UserOutlined } from "@ant-design/icons";
 import "./style.css";
 import useCategoryStore from '@/store/categories/page';
+import useSubCategoryStore from "@/store/sub-categories/page";
 
 import { useState } from "react";
 
@@ -15,7 +16,11 @@ import { useState } from "react";
 function Index() {
   const [open, setOpen] = useState(false)
   const {categories, getCategories} = useCategoryStore()
+  const {subcategories, getSubCategories} = useSubCategoryStore()
 
+  async function getSub(id: number){
+    await getSubCategories(id)
+  }
 
   useEffect(() =>{
     getCategories()
@@ -68,14 +73,19 @@ function Index() {
             />
 
             <div className="flex gap-[16px] items-center">
-              <Button onClick={() => setOpen(!open)} className="category_btn bg-[#1EB91E] text-white text-[14px] font-bold py-[15px] px-[36px] h-[46px]">
+              <Button onClick={() => setOpen(!open)} className="category_btn bg-[#1EB91E] w-[180px] text-white text-[14px] font-bold py-[15px] px-[36px] h-[46px]">
                   {
                     open?
                     <CloseSquareOutlined className=" text-[18px]"/>
                     :
                     <UnorderedListOutlined className=" text-[18px] rotate-180" />
                   }
-                  Kategoriya
+                  {
+                    open?
+                    "Bekor qilish"
+                    :
+                    "Kategoriya"
+                  }
               </Button>
               <Input
                 placeholder="Хочу купить..."
@@ -84,18 +94,32 @@ function Index() {
               />
             </div>
 
-            <div className={`w-[100%] absolute bg-[#fff] left-0 z-20 py-[30px] px-[20px] ${open ? ' top-[110px] duration-300 opacity-1' : "top-[-1200px] duration-300 opacity-0"} drawer`}>
-                {
-                  categories.map((e,i) => {
-                    return (
-                      <div key={i} className='mt-[10px] flex items-center justify-between w-[440px] h-[50px] py-[35px] px-[59px] bg-white rounded-xl cursor-pointer card hover:bg-[#f2f2f2]'>
-                          <PhoneOutlined className='w-[60px] h-[60px] bg-[#FF800B1A] rounded-full p-[20px] text-[#D55200]'/>
-                          <p>{e.name}</p>
-                          <ArrowRightOutlined />
-                      </div>
-                    )
-                  })
-                }
+            <div className={`w-[100%] flex gap-[80px] absolute bg-[#fff] left-0 z-20 py-[30px] px-[20px] ${open ? ' top-[110px] duration-300 opacity-1' : "top-[-1200px] duration-300 opacity-0"} drawer`}>
+                <div>
+                    {
+                      categories.map((e,i) => {
+                        return (
+                          <div key={i} onClick={() => getSub(e.id)} className=' hover:bg-[#FF6F14] hover:text-white mt-[10px] flex items-center justify-between w-[440px] h-[50px] py-[35px] px-[59px] bg-[#F0F0F0] rounded-xl cursor-pointer card '>
+                              <PhoneOutlined className='w-[60px] h-[60px] text-[20px]'/>
+                              <p>{e.name}</p>
+                              <ArrowRightOutlined />
+                          </div>
+                        )
+                      })
+                    }
+                </div>
+                <div className="mt-[7px] border-l-[1px] pl-[60px]">
+                    <p className="text-[27px] font-bold mb-[20px]">Tovarlar</p>
+                    {
+                      subcategories.map((e,i) => {
+                        return (
+                           <div key={i}>
+                                <p className="font-semibold text-[16px] mb-4 cursor-pointer">{e.name}</p>
+                           </div>
+                        )
+                      })
+                    }
+                </div>
             </div>
 
             <div className="flex items-center gap-[15px]">
