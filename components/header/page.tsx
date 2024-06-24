@@ -45,7 +45,7 @@ function Index() {
                 Rus
               </li>
               <li className="px-[10px] py-[4px] bg-[white] rounded-lg cursor-pointer font-medium text-[#240E0066]">
-                O'zb
+                Ozb
               </li>
               <li className="px-[10px] py-[4px] bg-[white] rounded-lg cursor-pointer font-medium text-[#240E0066]">
                 Eng
@@ -88,7 +88,7 @@ function Index() {
                 {
                   categories.map((e,i) => {
                     return (
-                      <div className='mt-[10px] flex items-center justify-between w-[440px] h-[50px] py-[35px] px-[59px] bg-white rounded-xl cursor-pointer card hover:bg-[#f2f2f2]'>
+                      <div key={i} className='mt-[10px] flex items-center justify-between w-[440px] h-[50px] py-[35px] px-[59px] bg-white rounded-xl cursor-pointer card hover:bg-[#f2f2f2]'>
                           <PhoneOutlined className='w-[60px] h-[60px] bg-[#FF800B1A] rounded-full p-[20px] text-[#D55200]'/>
                           <p>{e.name}</p>
                           <ArrowRightOutlined />
