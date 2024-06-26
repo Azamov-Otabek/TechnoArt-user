@@ -18,7 +18,6 @@ import Link from 'next/link';
 
 export default function Home() {
   const {categories, getCategories} = useCategoryStore()
-  const [category, setcategory] = useState([])
   const iconCategory = [Aksiya, Telefon, WashingCard, Desktop, Konditseoner]
 
   useEffect(() =>{

@@ -46,12 +46,12 @@ function Index() {
                 <h1 className='text-[44px] font-black mb-[32px]'>Texnoark haqida</h1>  
                 <div className='flex justify-between'>
                   <div className='w-[560px]'>
-                    <p className='text-[18px] text-justify mb-[30px]'>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                    <p className='text-[18px] text-justify mb-[30px]'>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <p className='text-[18px] text-justify mb-[30px]'>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                    <p className='text-[18px] text-justify mb-[30px]'>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.</p>
                   </div>
                   <div className='w-[560px]'>
-                    <p className='text-[18px] text-justify mb-[30px]'>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                    <p className='text-[18px] text-justify mb-[30px]'>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <p className='text-[18px] text-justify mb-[30px]'>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                    <p className='text-[18px] text-justify mb-[30px]'>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.</p>
                   </div>
                 </div>
               </div>

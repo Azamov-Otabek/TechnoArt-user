@@ -15,18 +15,18 @@ function Index() {
     Math.round((value - 1000000) / 90000);
   const convertToMillionValue = (value: any) => value * 500000 + 1000000;
 
-  const onChange = (value) => {
+  const onChange = (value:any) => {
     setSlide1(convertToMillionValue(value[0]));
     setSlide2(convertToMillionValue(value[1]));
   };
 
-  const onChangeComplete = (value) => {
+  const onChangeComplete = (value:any) => {
     setSlide1(convertToMillionValue(value[0]));
     setSlide2(convertToMillionValue(value[1]));
   };
 
   return (
-    <>
+    <div>
       <Container>
         <p className="flex gap-[20px] mt-[20px]">
           <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
@@ -43,7 +43,7 @@ function Index() {
             <div className="w-[356px] h-[1467px] rounded-[10px] bg-[white] p-[40px]">
               <p className="flex gap-2 items-center mb-[20px]">
                 <span className="font-bold text-[24px]">Narx</span>
-                <span className="text-[18px] ">(So'mda)</span>
+                <span className="text-[18px] ">(Somda)</span>
               </p>
 
               <div className="flex justify-between mb-[20px]">
@@ -130,7 +130,7 @@ function Index() {
           </div>
         </Container>
       </div>
-    </>
+    </div>
   );
 }
 

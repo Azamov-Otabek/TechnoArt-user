@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import Container from "../../components/container/page";
 import ImageGallery from "react-image-gallery";
@@ -244,7 +244,7 @@ function Product() {
                         <Avatar className="w-[130px] h-[80px]" src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
                     </Tooltip>
                     <div className="w-[70%}">
-                      <h4 className="font-bold text-[24px] mb-[10px]">A'zamxon Axmedov</h4>
+                      <h4 className="font-bold text-[24px] mb-[10px]">Azamxon Axmedov</h4>
                       <p className="font-medium text-[#240E00CC] text-[16px]">Супер!! Спасибо продавцу, все пришло аккуратно. Телефон крутой не жалею о покупке. Советую тем, кому нужен хороший экран, оптимизация и тд!!!! Цвет темно синий, а на свету хамелеон</p>
                     </div>
                   </div>
@@ -267,7 +267,7 @@ function Product() {
                     </Tooltip>
                     <div className="w-[70%}">
                       <h4 className="font-bold text-[24px] mb-[10px]">Kamronbek</h4>
-                      <p className="font-medium text-[#240E00CC] text-[16px]">Telefon juda yoqti bir kunda yetkazib berishti o'ylaganimdan yaxshiroq ekan tafsiya qilaman uzumdan harid qilishilarni 👍👍👍👍👍👍</p>
+                      <p className="font-medium text-[#240E00CC] text-[16px]">Telefon juda yoqti bir kunda yetkazib berishti oylaganimdan yaxshiroq ekan tafsiya qilaman uzumdan harid qilishilarni 👍👍👍👍👍👍</p>
                     </div>
                   </div>
                 </div>
