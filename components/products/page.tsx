@@ -28,7 +28,7 @@ function page() {
         </p>
         <div className="flex items-center justify-between gap-[10px]">
           <Button className="btn_product">
-            Hammasi <ArrowRightOutlined />
+          Savat <ArrowRightOutlined />
           </Button>
           <Badge>
             <Avatar

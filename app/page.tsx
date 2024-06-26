@@ -14,6 +14,7 @@ import Telefon from "@/images/mobile.svg";
 import WashingCard from "@/images/washing_machine.svg";
 import Desktop from '@/images/desktop.svg'
 import Konditseoner from '@/images/konditseoner.svg';
+import Link from 'next/link';
 
 export default function Home() {
   const {categories, getCategories} = useCategoryStore()
@@ -35,19 +36,23 @@ export default function Home() {
                 {
                   categories.slice(0,5).map((e, i) => {
                     return (
-                      <div key={i} className='flex items-center justify-between w-[440px] h-[120px] py-[45px] px-[59px] bg-white rounded-xl cursor-pointer card'>
+                      <Link href={'/categories'} key={i} onClick={() => localStorage.setItem('CategoryId', JSON.stringify(e.id))}>
+                          <div className='flex items-center justify-between w-[440px] h-[120px] py-[45px] px-[59px] bg-white rounded-xl cursor-pointer card'>
                           <Image src={iconCategory[i]} alt='Logo' width={30} height={30}/>
                           {e.name}
                           <ArrowRightOutlined />
                       </div>
+                      </Link>
                     )
                   })   
                 }
-                <div  className='flex items-center justify-between w-[440px] h-[120px] py-[45px] px-[59px] bg-white rounded-xl cursor-pointer card'>
-                        <MenuOutlined />
-                          Hammasi
-                          <ArrowRightOutlined />
-                </div>
+               <Link href={'/categories'} onClick={() => localStorage.setItem('CategoryId', JSON.stringify(0))}>
+                  <div  className='flex items-center justify-between w-[440px] h-[120px] py-[45px] px-[59px] bg-white rounded-xl cursor-pointer card'>
+                            <MenuOutlined />
+                              Hammasi
+                              <ArrowRightOutlined />
+                    </div>
+               </Link>
            </div>
          </Container>
       </div>

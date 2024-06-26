@@ -20,6 +20,7 @@ import Muzlatgich from '@/images/muzlatgich.svg'
 
 
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -33,6 +34,11 @@ function Index() {
   async function getSub(e: any){
     setcategory(e.name)
     await getSubCategories(e.id)
+  }
+
+  function goToCategories(id:number){
+    setOpen(false)
+    localStorage.setItem('SubCategory', JSON.stringify(id))
   }
 
   useEffect(() =>{
@@ -130,9 +136,11 @@ function Index() {
                     {
                       subcategories?.map((e,i) => {
                         return (
-                           <div key={i}>
+                           <Link  key={i} href={'/categories'} onClick={() => goToCategories(e.id)}>
+                              <div>
                                 <p className="font-semibold text-[16px] mb-4 cursor-pointer">{e.name}</p>
-                           </div>
+                              </div>
+                           </Link>
                         )
                       })
                     }
