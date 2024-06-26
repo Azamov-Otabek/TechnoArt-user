@@ -19,8 +19,10 @@ const useCategoryStore = create <request_category> ((set) => ({
         }catch(err){
             console.log(err);
         }
-    }
+    },
 }));
+
+
 
 
 export default useCategoryStore;

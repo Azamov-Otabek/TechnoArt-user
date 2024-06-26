@@ -8,6 +8,16 @@ import { ArrowRightOutlined, BarChartOutlined, CloseSquareOutlined, HeartOutline
 import "./style.css";
 import useCategoryStore from '@/store/categories/page';
 import useSubCategoryStore from "@/store/sub-categories/page";
+import Aksiya from "@/images/Aksiya.svg";
+import Telefon from "@/images/mobile.svg";
+import WashingCard from "@/images/washing_machine.svg";
+import Desktop from '@/images/desktop.svg'
+import Konditseoner from '@/images/konditseoner.svg';
+import PC from '@/images/pc.svg'
+import ChangYutgich from '@/images/chang_yutgich.svg'
+import Muzlatgich from '@/images/muzlatgich.svg'
+
+
 
 import { useState } from "react";
 
@@ -17,9 +27,12 @@ function Index() {
   const [open, setOpen] = useState(false)
   const {categories, getCategories} = useCategoryStore()
   const {subcategories, getSubCategories} = useSubCategoryStore()
+  const [category, setcategory] = useState('')
+  const iconCategory = [Aksiya, Telefon, WashingCard, Desktop, Konditseoner, PC, ChangYutgich, Muzlatgich]
 
-  async function getSub(id: number){
-    await getSubCategories(id)
+  async function getSub(e: any){
+    setcategory(e.name)
+    await getSubCategories(e.id)
   }
 
   useEffect(() =>{
@@ -99,8 +112,12 @@ function Index() {
                     {
                       categories.map((e,i) => {
                         return (
-                          <div key={i} onClick={() => getSub(e.id)} className=' hover:bg-[#FF6F14] hover:text-white mt-[10px] flex items-center justify-between w-[440px] h-[50px] py-[35px] px-[59px] bg-[#F0F0F0] rounded-xl cursor-pointer card '>
-                              <PhoneOutlined className='w-[60px] h-[60px] text-[20px]'/>
+                          <div key={i} onClick={() => getSub(e)} className={` ${e.name == category ? "bg-[#FF6F14] text-white" : "bg-[#F0F0F0]"} hover:bg-[#FF6F14] hover:text-white font-semibold mt-[10px] flex items-center justify-between w-[440px] h-[50px] py-[35px] px-[59px] rounded-xl cursor-pointer card `}>
+                              <Image
+                              src={iconCategory[i]}
+                              alt={e.name}
+                              className="w-[30px] h-[30px] rasm"
+                              />
                               <p>{e.name}</p>
                               <ArrowRightOutlined />
                           </div>
@@ -109,9 +126,9 @@ function Index() {
                     }
                 </div>
                 <div className="mt-[7px] border-l-[1px] pl-[60px]">
-                    <p className="text-[27px] font-bold mb-[20px]">Tovarlar</p>
+                    <p className="text-[27px] font-bold mb-[20px]">{category}</p>
                     {
-                      subcategories.map((e,i) => {
+                      subcategories?.map((e,i) => {
                         return (
                            <div key={i}>
                                 <p className="font-semibold text-[16px] mb-4 cursor-pointer">{e.name}</p>
