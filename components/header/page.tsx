@@ -158,11 +158,13 @@ function Index() {
                     <BarChartOutlined className="text-[20px] text-[black]"/>
                 </Avatar>
               </Badge>
+              <Link href={'/card'}>
               <Badge count={7} >
                 <Avatar shape="square" size="large" className="bg-[#F0F0F0] cursor-pointer">
                     <ShoppingCartOutlined className="text-[20px] text-[black]" />
                 </Avatar>
               </Badge>
+              </Link>
               <Avatar size="large" icon={<UserOutlined className="text-[20px] text-[black]"/>} className="bg-[#F0F0F0] cursor-pointer"/>
             </div>
           </div>
