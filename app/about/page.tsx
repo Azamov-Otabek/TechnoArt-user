@@ -1,13 +1,18 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../../components/container/page'
 import Swiper from '../../components/swiper/page'
+import Cookies from 'js-cookie'
 
 function Index() {
-  let active = localStorage.getItem("aboutus") || ""
-  let b = JSON.parse(active)
-  const [aboutactive, setAboutActive] = useState(b)
+  const [aboutactive, setAboutActive] = useState('Texnoark haqida')
   const arr = ['Texnoark haqida','Muddatli to’lov','Yordam','Tovarlarga kafolat','To‘lov usullari']
+  
+  useEffect(() => {
+    setAboutActive(Cookies.get('aboutus') || 'Texnoark haqida')
+  }, [])
+ 
+ 
   return (
     <>
       <div>
