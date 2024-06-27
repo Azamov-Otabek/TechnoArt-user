@@ -24,11 +24,11 @@ function page() {
                  <div>
                     <h2 className='text-[18px] font-bold '>Tashkilot haqida</h2>
                     <ul className='mt-[20px]'>
-                        <li onClick={() => localStorage.setItem('aboutus', 'Texnoark haqida')} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>Texnoark haqida</Link></li>
-                        <li onClick={() => localStorage.setItem('aboutus', 'Muddatli to’lov')} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>Muddatli to’lov</Link></li>
-                        <li onClick={() => localStorage.setItem('aboutus', 'Yordam')} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>Yordam</Link></li>
-                        <li onClick={() => localStorage.setItem('aboutus', 'Tovarlarga kafolat')} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>Tovarlarga kafolat</Link></li>
-                        <li onClick={() => localStorage.setItem('aboutus', 'To‘lov usullari')} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>To‘lov usullari</Link></li>
+                        <li onClick={() => localStorage.setItem('aboutus', JSON.stringify('Texnoark haqida'))} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>Texnoark haqida</Link></li>
+                        <li onClick={() => localStorage.setItem('aboutus', JSON.stringify('Muddatli to’lov'))} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>Muddatli to’lov</Link></li>
+                        <li onClick={() => localStorage.setItem('aboutus', JSON.stringify('Yordam'))} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>Yordam</Link></li>
+                        <li onClick={() => localStorage.setItem('aboutus', JSON.stringify('Tovarlarga kafolat'))} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>Tovarlarga kafolat</Link></li>
+                        <li onClick={() => localStorage.setItem('aboutus', JSON.stringify('To‘lov usullari'))} className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[black] cursor-pointer'><Link href={'/about'}>To‘lov usullari</Link></li>
                     </ul>
                 </div>
                 <div>

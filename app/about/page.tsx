@@ -4,7 +4,9 @@ import Container from '../../components/container/page'
 import Swiper from '../../components/swiper/page'
 
 function Index() {
-  const [aboutactive, setAboutActive] = useState(localStorage.getItem('aboutus') || 'Texnoark haqida')
+  let active = localStorage.getItem("aboutus") || ""
+  let b = JSON.parse(active)
+  const [aboutactive, setAboutActive] = useState(b)
   const arr = ['Texnoark haqida','Muddatli to’lov','Yordam','Tovarlarga kafolat','To‘lov usullari']
   return (
     <>
