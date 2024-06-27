@@ -8,7 +8,7 @@ import { ArrowRightOutlined, BarChartOutlined, CloseSquareOutlined, HeartOutline
 import "./style.css";
 import useCategoryStore from '@/store/categories/page';
 import useSubCategoryStore from "@/store/sub-categories/page";
-import Aksiya from "@/images/Aksiya.svg";
+import Aksiya from "@/images/aksiya.svg";
 import Telefon from "@/images/mobile.svg";
 import WashingCard from "@/images/washing_machine.svg";
 import Desktop from '@/images/desktop.svg'
