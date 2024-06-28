@@ -3,13 +3,17 @@ import React, { useEffect, useState } from 'react'
 import Container from '../../components/container/page'
 import Swiper from '../../components/swiper/page'
 import Cookies from 'js-cookie'
+import useProductStore from '@/store/products/page'
 
 function Index() {
   const [aboutactive, setAboutActive] = useState('Texnoark haqida')
   const arr = ['Texnoark haqida','Muddatli to’lov','Yordam','Tovarlarga kafolat','To‘lov usullari']
   
+  const { products, getProducts } = useProductStore()
+  
   useEffect(() => {
     setAboutActive(Cookies.get('aboutus') || 'Texnoark haqida')
+    getProducts()
   }, [])
  
  
@@ -158,7 +162,7 @@ function Index() {
     <div className='mt-[60px]'>
       <Container>
         <h1 className='font-bold text-[32px] mb-[24px]'>Aksiyadagi mahsulotlar</h1>
-        <Swiper/>
+        <Swiper data={products}/>
       </Container>
     </div>
     </>

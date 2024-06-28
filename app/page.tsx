@@ -15,13 +15,18 @@ import WashingCard from "@/images/washing_machine.svg";
 import Desktop from '@/images/desktop.svg'
 import Konditseoner from '@/images/konditseoner.svg';
 import Link from 'next/link';
+import useProductStore from '@/store/products/page';
+
+
 
 export default function Home() {
   const {categories, getCategories} = useCategoryStore()
   const iconCategory = [Aksiya, Telefon, WashingCard, Desktop, Konditseoner]
+  const {products, getProducts} = useProductStore()
 
   useEffect(() =>{
     getCategories()
+    getProducts()
   }, [])
   return (
     <>
@@ -64,7 +69,7 @@ export default function Home() {
            </div>
 
            <div className='mt-[24px]'>
-              <Swiper/>
+              <Swiper data={products}/>
            </div>
         </Container>
       </div>
@@ -77,7 +82,7 @@ export default function Home() {
            </div>
 
            <div className='mt-[24px]'>
-           <Swiper/>
+           <Swiper data={products}/>
            </div>
         </Container>
       </div>  
@@ -90,7 +95,7 @@ export default function Home() {
            </div>
 
            <div className='mt-[24px]'>
-           <Swiper/>
+           <Swiper data={products}/>
            </div>
         </Container>
       </div>  

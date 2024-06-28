@@ -12,6 +12,7 @@ import Time from "@/images/time.svg";
 import { UserOutlined } from "@ant-design/icons";
 import Banner3 from '@/images/banner3.png'
 import Swiper from '../../components/swiper/page'
+import useProductStore from "@/store/products/page";
 
 function Product() {
   const images = [
@@ -47,6 +48,8 @@ function Product() {
     },
   ];
   const [comments, setcommets] = useState("Telfon xususiyatlari");
+  const {products} = useProductStore();
+
 
   return (
     <>
@@ -292,7 +295,7 @@ function Product() {
       <div className="mt-[120px]">
         <Container>
           <h1 className='font-bold text-[32px] mb-[24px]'>Aksiyadagi mahsulotlar</h1>
-          <Swiper/>
+          <Swiper data={products}/>
         </Container>
       </div>
     </>

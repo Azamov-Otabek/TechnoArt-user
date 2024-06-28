@@ -2,6 +2,7 @@
 import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {data_product} from '../../interfaces/products'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,7 +14,7 @@ import './style.css';
 // import required modules
 import { FreeMode, Pagination } from 'swiper/modules';
 
-export default function App() {
+export default function App({data}:any) {
   return (
     <>
       <Swiper
@@ -27,13 +28,15 @@ export default function App() {
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><ProductCard/></SwiperSlide>
-        <SwiperSlide><ProductCard/></SwiperSlide>
-        <SwiperSlide><ProductCard/></SwiperSlide>
-        <SwiperSlide><ProductCard/></SwiperSlide>
-        <SwiperSlide><ProductCard/></SwiperSlide>
-        <SwiperSlide><ProductCard/></SwiperSlide>
-        <SwiperSlide><ProductCard/></SwiperSlide>
+         {
+          data?.map((e:data_product, i:number) => {
+            return (
+              <SwiperSlide key={i}>
+                <ProductCard datas={e}/>
+              </SwiperSlide>
+            )
+          })
+         }
       </Swiper>
     </>
   );

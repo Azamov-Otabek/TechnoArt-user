@@ -5,6 +5,7 @@ import ProductCard from "../../components/products/page";
 import { Slider } from "antd";
 import { Radio } from "antd";
 import "./style.css";
+import useProductStore from "@/store/products/page";
 
 function Index() {
   const [slide1, setSlide1] = useState(1000000); // Default value in millions
@@ -24,6 +25,11 @@ function Index() {
     setSlide1(convertToMillionValue(value[0]));
     setSlide2(convertToMillionValue(value[1]));
   };
+  const { products, getProducts } = useProductStore();
+
+  React.useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <div>
@@ -123,9 +129,10 @@ function Index() {
             </div>
 
             <div className="flex flex-wrap gap-[20px] w-[956px]">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((e, i) => (
-                <ProductCard key={i} />
-              ))}
+                {products.map((e, i) => {
+                  return <ProductCard key={i} datas={e}/>
+                })}
+                
             </div>
           </div>
         </Container>

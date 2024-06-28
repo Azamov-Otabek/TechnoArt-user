@@ -9,8 +9,11 @@ import React from "react";
 import Product from "../../images/product.png";
 import "./style.css";
 import Link from "next/link";
+import {data_product} from '../../interfaces/products'
 
-function page() {
+function page({datas}:any) {
+  const number = Math.ceil(datas.price / 12)
+
   return (
     <Link href={'/product'}>
       <div className="w-[305px] h-[490px] pt-[50px] pb-[36px] px-[30px] bg-white rounded-xl">
@@ -20,11 +23,11 @@ function page() {
           className="w-[150px] h-[160px] mx-auto"
         />
         <p className="mt-[36px] text-[16px] mb-[16px]">
-          Kir yuvish mashinasi LG F2V7GW9T
+          {datas.name}
         </p>
-        <h4 className="font-bold text-[18px] ">8 279 000 so‘m</h4>
+        <h4 className="font-bold text-[18px] ">{datas.price} so‘m</h4>
         <p className="text-[#1EB91E] mt-[11px] mb-[19px] bg-[#1EB91E14] inline-block py-2 px-4 rounded-lg">
-          1 134 890 so’mdan/12 oy
+          {number} so’mdan/12 oy
         </p>
         <div className="flex items-center justify-between gap-[10px]">
           <Button className="btn_product">
