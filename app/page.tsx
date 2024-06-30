@@ -36,12 +36,12 @@ export default function Home() {
 
       <div className='mt-[60px] categ '>
          <Container>
-           <div className='flex items-center flex-wrap justify-between gap-[20px]'>
+           <div className='flex items-center flex-wrap justify-between gap-[20px] max-2xl:justify-center'>
                 {
                   categories.slice(0,5).map((e, i) => {
                     return (
                       <Link href={'/categories'} key={i} onClick={() => localStorage.setItem('CategoryId', JSON.stringify(e.id))}>
-                          <div className='flex items-center justify-between w-[440px] h-[120px] py-[45px] px-[59px] bg-white rounded-xl cursor-pointer card'>
+                          <div className='flex items-center justify-between w-[440px] max-lg:w-[300px] max-lg:px-[20px] h-[120px] py-[45px] px-[59px] bg-white rounded-xl cursor-pointer card'>
                           <Image src={iconCategory[i]} alt='Logo' width={30} height={30}/>
                           {e.name}
                           <ArrowRightOutlined />
@@ -51,7 +51,7 @@ export default function Home() {
                   })   
                 }
                <Link href={'/categories'} onClick={() => localStorage.setItem('CategoryId', JSON.stringify(0))}>
-                  <div  className='flex items-center justify-between w-[440px] h-[120px] py-[45px] px-[59px] bg-white rounded-xl cursor-pointer card'>
+                  <div  className='flex items-center justify-between w-[440px] max-lg:w-[300px] max-lg:px-[20px] h-[120px] py-[45px] px-[59px] bg-white rounded-xl cursor-pointer card'>
                             <MenuOutlined />
                               Hammasi
                               <ArrowRightOutlined />
@@ -63,8 +63,8 @@ export default function Home() {
 
       <div className='mt-[64px]'>
         <Container>
-           <div className='flex justify-between items-center'>
-             <h1 className='font-bold text-[32px] '>Ommabob mahsulotlar</h1>
+           <div className='flex justify-between items-center max-sm:px-[10px]'>
+             <h1 className='font-bold text-[32px] max-sm:text-[20px]'>Ommabob mahsulotlar</h1>
              <Button className='btn_all'>Hammasi <ArrowRightOutlined /></Button>
            </div>
 
@@ -76,8 +76,8 @@ export default function Home() {
 
       <div className='mt-[64px]'>
         <Container>
-           <div className='flex justify-between items-center'>
-             <h1 className='font-bold text-[32px] '>Populyarniy mahsulotlar</h1>
+           <div className='flex justify-between items-center max-sm:px-[10px]'>
+             <h1 className='font-bold text-[32px] max-sm:text-[20px]'>Populyarniy mahsulotlar</h1>
              <Button className='btn_all'>Hammasi <ArrowRightOutlined /></Button>
            </div>
 
@@ -89,8 +89,8 @@ export default function Home() {
 
       <div className='mt-[64px]'>
         <Container>
-           <div className='flex justify-between items-center'>
-             <h1 className='font-bold text-[32px] '>Aksiyadagi mahsulotlar</h1>
+           <div className='flex justify-between items-center max-sm:px-[10px]'>
+             <h1 className='font-bold text-[32px] max-sm:text-[20px]'>Aksiyadagi mahsulotlar</h1>
              <Button className='btn_all'>Hammasi <ArrowRightOutlined /></Button>
            </div>
 

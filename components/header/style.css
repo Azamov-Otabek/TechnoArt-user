@@ -16,6 +16,18 @@
     border: none;
 }
 
+.search_inputt{
+    width: 100%;
+    min-width: 200px !important;
+    height: 46px;
+    padding: 16px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #D55200 !important;
+    color: white !important;
+    border: none;
+}
+
 
 .card:hover .rasm > svg > path {
     fill: #ffff !important; /* Change this to the desired color */

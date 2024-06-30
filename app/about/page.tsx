@@ -34,23 +34,31 @@ function Index() {
       </p>
     </Container>
       </div>
+    
+    
     <div>
       <Container>
-        <div className='flex gap-[12px] mt-[24px]'>
+        <div className='flex gap-[12px] mt-[24px] flex-wrap max-sm:justify-center'>
           {
             arr.map((e,i) => {
               return (
-                <button key={i} onClick={() => setAboutActive(e)} className={`py-[14px] px-[28px] w-[213px] font-bold text-[18px] rounded-xl ${aboutactive == e? "bg-[#FF6F14] text-white duration-300" : "bg-white text-black duration-300"}`}>{e}</button>
+                <button key={i} onClick={() => setAboutActive(e)} className={`py-[14px] px-[28px] w-[213px] font-bold text-[18px] rounded-xl max-sm:w-[100%] ${aboutactive == e? "bg-[#FF6F14] text-white duration-300" : "bg-white text-black duration-300"}`}>{e}</button>
               )
             })
           }
         </div>
       </Container>
     </div>
+   
+   
+   
     <div>
+
+
+
       <div>
         <Container>
-          <div className='bg-white px-[80px] py-[60px] mt-[24px] rounded-xl'>
+          <div className='bg-white px-[80px] py-[60px] mt-[24px] rounded-xl max-sm:px-[30px]'>
             {
               aboutactive == 'Texnoark haqida' && 
               <div>
@@ -161,7 +169,7 @@ function Index() {
     </div>
     <div className='mt-[60px]'>
       <Container>
-        <h1 className='font-bold text-[32px] mb-[24px]'>Aksiyadagi mahsulotlar</h1>
+        <h1 className='font-bold text-[32px] mb-[24px] max-sm:text-[20px]'>Aksiyadagi mahsulotlar</h1>
         <Swiper data={products}/>
       </Container>
     </div>

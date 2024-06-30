@@ -27,6 +27,20 @@ export default function App({data}:any) {
         }}
         modules={[FreeMode, Pagination]}
         className="mySwiper"
+        breakpoints={{
+          // when window width is >= 1024px (desktop)
+          1024: {
+            slidesPerView: 4,
+          },
+          // when window width is >= 768px (tablet)
+          768: {
+            slidesPerView: 3,
+          },
+          // when window width is >= 320px (mobile)
+          320: {
+            slidesPerView: 2,
+          },
+        }}
       >
          {
           data?.map((e:data_product, i:number) => {

@@ -11,7 +11,7 @@ function page() {
   return (
     <footer className='mt-[60px]'>
         <Container>
-            <div className='flex bg-white pt-[60px] px-[80px] rounded-xl h-[400px] justify-between'>
+            <div className='flex bg-white pt-[60px] px-[80px] rounded-xl h-[400px] justify-between max-sm:flex-col'>
                 <div>
                     <Image src={Logo} alt='Logo' width={240} height={68}/>
                     <h1 className='text-[18px] font-bold mt-[32px] mb-[17px]'>Bizni ijtimoiyi tarmoqlar</h1>
